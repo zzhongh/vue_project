@@ -36,7 +36,19 @@
     },
     methods: {
       submitForm() {
-        let {name,password} =this.ruleForm;
+        let {name,password} =this.ruleForm;//获取表单值
+
+        //请求方法
+        // this.$http({
+        //   method:'post',
+        //   url:'./login',
+        //   data:{
+        //     user:name,
+        //     paw:password
+        //   }
+        // }).then(res=>{
+        //   console.log(res)
+        // })
         if(name == 'admin' && password =='admin'){
             sessionStorage.setItem('username',name);//本地的缓存
             this.$router.push('./home');
